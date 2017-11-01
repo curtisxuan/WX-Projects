@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/board/board",
+    "pages/self/self"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#405482",
+    "navigationBarTitleText": "陆向谦头条",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text":"首页",
+        "iconPath": "static/icon/index.png",
+        "selectedIconPath": "static/icon/index.act.png"
+      },
+      {
+        "pagePath": "pages/board/board",
+        "text": "社区",
+        "iconPath": "static/icon/board.png",
+        "selectedIconPath": "static/icon/board.act.png"
+      },
+      {
+        "pagePath": "pages/self/self",
+        "text": "我的",
+        "iconPath": "static/icon/self.png",
+        "selectedIconPath": "static/icon/self.act.png"
+      }
+    ],
+    "position": "bottom",
+    "color": "#bbb",
+    "selectedColor": "#405482"
+  }
+}
