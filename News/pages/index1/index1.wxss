@@ -1,0 +1,78 @@
+/**index.wxss**/
+/* day1 style */
+.list {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.item {
+  overflow: hidden;
+  _height: 1%;
+  margin-top: 50rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #bbbbbb;
+}
+.item text {
+  font-size: 30rpx;
+  float: left;
+  width: 390rpx;
+}
+.item image {
+  width: 280rpx;
+  height: 180rpx;
+  float: right;
+}
+
+/* day2 style */
+#button {
+  background: #3F51B5;
+  color: #fff;
+  width: 200rpx;
+  height: 70rpx;
+  font-size: 30rpx;
+  margin: 35rpx auto;
+  text-align: center;
+  line-height: 70rpx;
+}
+
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+.nav {
+  white-space: nowrap;
+  position: fixed;     /* 导航条浮动 */
+  background: #fff;    /* 增加背景色 */
+  top: 0;              /* 导航条距离顶部距离 */
+  font-size: 35rpx;    /* 字体大小 */
+  font-weight: 600;    /* 字体加粗 */
+  box-shadow:0 0 2px #999; /* 设置边框阴影 */
+}
+.list {
+  margin-top: 120rpx;  /* list列表距离导航条高度 */
+}
+.nav text {
+  display: inline-block; /* 设置 text 为行内块级元素 */
+  padding:25rpx 0;       /* 增加 text 上下内边距, 调整点击判定区域 */
+  margin-left: 100rpx;    /* 设置 text 左侧外边距 */
+}
+.nav text:last-child {
+  margin-right: 100rpx;  /* 为最后一个 text 增加右边距 */
+}
+
+/*
+作业6: 设置栏目 text 点击效果,优化栏目文字点击后的样式
+ */
+.check {
+  border-bottom: 10rpx solid #3F51B5;  /* 下边框样式 */
+  color: #3F51B5;                      /* 设置文字颜色 */
+}
+.nav text {
+  width: 100rpx;                       /* 为text 设置宽度, 确保下边框长度相同 */
+  text-align-last:justify;             /* 设置对齐方式: 两端对齐 */
+}
+.nav text#enText {
+  text-align-last:center;             /* 由于 it 两个字母使用两端对齐比较难看, 所以这里对英文样式做单独定义, 两端对齐 */
+}

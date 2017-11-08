@@ -1,0 +1,21 @@
+<template name="navBar">
+<scroll-view scroll-x="true" class="nav">
+  <text class="{{test==1?'check':''}}" bindtap="navigateTo1" data-cat="1">综合</text>
+  <text class="{{test==2?'check':''}}" bindtap="navigateTo2" data-cat="2">互联网</text>
+  <text class="{{test==3?'check':''}}" bindtap="navigateTo3" data-cat="3">通讯</text>
+  <text class="{{test==4?'check':''}}" bindtap="navigateTo4" id="enText" data-cat="4">IT</text>
+  <text class="{{test==5?'check':''}}" bindtap="navigateTo5" data-cat="5">科技</text>
+</scroll-view>
+</template>
+
+<import src="index.wxml"/>
+<template is="navBar" data="{{test: '1'}}"/>
+
+<view class="list">
+  <view class="item" wx:for="{{list}}" wx:key="index" wx:for-item="list">
+    <text>{{list.title}} || {{list.itemsid}} || {{list.catid}}</text>
+    <image src="{{list.thumb}}" mode="aspectFill"></image>
+  </view>
+</view>
+
+<view id="button" class="{{show}}" data-page="{{page}}" data-cat="{{cat}}" bindtap="loadMore">加载更多</view>
