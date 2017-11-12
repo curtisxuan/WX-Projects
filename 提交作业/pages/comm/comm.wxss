@@ -1,0 +1,38 @@
+/* pages/comm/commm.wxss */
+
+
+.whole{
+  padding: 15rpx 25rpx;
+}
+.item{
+  margin-bottom: 50rpx;
+  border: 1rpx solid #888;padding: 
+  15rpx 25rpx;
+} 
+
+.userInfo{
+  line-height: 70rpx;
+  height:70rpx;
+}
+
+.u-avatar{
+  height:70rpx;
+  width: 70rpx;
+  border-radius: 50%;
+  float:left;
+}
+
+.u-nickname{
+  font-size: 30rpx;
+  padding-left: 20rpx;
+}
+
+.u-published{
+  float: right;
+  font-size: 30rpx;
+}
+
+.itemInfo{
+  font-size: 25rpx;
+  margin-left: 90rpx;
+}

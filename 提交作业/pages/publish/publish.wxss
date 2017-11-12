@@ -1,0 +1,65 @@
+   .area {
+  padding: 25rpx 35rpx;
+}
+
+.title{
+  font-size: 50rpx;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 30rpx;
+  border-bottom: 5rpx solid black;
+  width: 44%;
+  margin-left: 28%;
+}
+
+.section_form {
+  margin-bottom: 30rpx;
+}
+.sub_section_form {
+  margin-bottom: 20rpx;
+}
+
+.name{
+  float:left;
+  margin-top:7rpx;
+}
+.school{
+  float:left;
+  margin-top:7rpx;
+}
+.section{
+  float:left;
+  margin-top:7rpx;
+}
+
+.section_form view,.section_form input {
+  display: inline-block;
+  font-size: 30rpx;
+}
+.sub_section_form view,.sub_section_form input {
+  display: inline-block;
+  font-size: 30rpx;
+}
+.sub_section_form input {
+  margin-left: 25rpx;
+  border-bottom: 1rpx solid #888;
+  padding-left: 30rpx;
+}
+.section_form textarea {
+  border: 1rpx dashed #888;
+  padding: 10rpx;
+  font-size: 30rpx;
+  width: 95%;
+}
+#res-button {
+  float: left;
+  margin-left: 130rpx;
+  width: 180rpx;
+}
+#sub-button {
+  float: right;
+  margin-right: 130rpx;
+  width: 180rpx;
+  background: #3F51B5;
+  color: #fff;
+}

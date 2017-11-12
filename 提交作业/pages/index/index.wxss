@@ -1,0 +1,52 @@
+/**index.wxss**/
+image {
+  display: block;
+  margin-top:20rpx;
+  width: 100%;
+}
+
+.titleText{
+  text-align: center;
+  font-weight:900;
+  font-size: 50rpx;
+}
+.secondTitleText{
+  text-align: center;
+  font-weight:500;
+  font-size: 30rpx;
+}
+
+.important {
+  font-weight: 900;
+  text-align: center;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.subs image{
+  height:200rpx;
+  width: 200rpx;
+  margin-left: 55rpx;
+}
+
+.subs {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  display: inline-block;
+}
+
+.subs text{
+  font-size: 39rpx;
+}
+
+.comm{
+  padding-left: 15rpx;
+}
+
+.show {
+  display: inhert;
+}
+.hide {
+  display: none;
+}
+

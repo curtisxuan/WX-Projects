@@ -1,0 +1,26 @@
+<view class="item">
+  <view class="userInfo">
+    <image class="u-avatar" src="{{detail.avatarUrl}}"></image>
+    <text class="u-nickname">{{detail.nickName}}</text>
+    <text class="u-published">{{detail.published}}</text>
+  </view>
+  <view class="itemInfo">
+    <view class="u-name"><text>姓名: </text>{{detail.f_name}}</view>
+    <view class="u-school"><text>学校: </text>{{detail.f_school}}</view>
+    <view class="u-telephone"><text>电话: </text>{{detail.f_telephone}}</view>
+    <view class="u-email"><text>邮箱: </text>{{detail.f_email}}</view>
+    <view class="u-section"><text>参与部门: </text>{{detail.f_section}}</view>
+  </view>
+  <view class="detailInfo">
+    <view class="u-dream"><text>我的梦想是什么? </text>{{detail.f_dream}}</view>
+    <view class="u-torealize"><text>如何实现梦想？毕业后加入什么样的公司？ </text>{{detail.f_torealize}}</view>
+    <view class="u-quality"><text>我需要具备哪些知识技能才能加入这样的初创公司？</text>{{detail.f_quality}}</view>
+    <view class="u-toplan"><text>计划于课程项目：</text>{{detail.f_toplan}}</view>
+    <view class="u-dedicate"><text>个人课程贡献： </text>{{detail.f_dedicate}}</view>
+    <view class="u-total"><text>期末课程总结: </text>{{detail.f_total}}</view>
+    <view class="u-item"><text>我有自己的创业项目: </text>{{detail.f_item}}</view>
+  </view>
+  <view class="likeButton">
+    <image bindtap="likeAction" src="/pages/img/like_{{likeStatus}}.png"></image><text>{{likeNum}}</text>
+  </view>
+  </view>
