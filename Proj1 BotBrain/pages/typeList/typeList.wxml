@@ -1,0 +1,14 @@
+<view class="typeList">
+    <navigator url="/pages/publish/publish?type=1" class="item">
+      <image src="/pages/img/insert.png"></image>
+    </navigator>
+    <block wx:for="{{type}}" wx:key="index" wx:for-item="list">
+      <navigator url="/pages/edit/edit?id={{list.id}}" class="item">
+        <view>姓名: {{list.f_name}}</view>
+        <view>手机: {{list.f_telephone}}</view>
+        <view>部门: {{list.f_section}}</view>
+        <view wx:if="{{list.status==1}}">已发布</view>
+        <view wx:if="{{list.status==2}}">草稿</view>
+      </navigator>
+    </block>
+</view>

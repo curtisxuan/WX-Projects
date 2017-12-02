@@ -1,0 +1,13 @@
+.content {
+  padding: 30rpx 15rpx;
+}
+.content image{
+  width: 100%;
+  display: block;
+  margin: 30rpx auto;
+}
+.content view {
+  margin-bottom: 25rpx;
+  font-size: 30rpx;
+  text-indent: 2em;
+}

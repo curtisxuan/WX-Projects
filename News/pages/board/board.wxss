@@ -1,10 +1,17 @@
 /**index.wxss**/
-image {
+.show {
   display: block;
-  margin: 0 auto;
 }
-text {
-  display: block;
-  text-align: center;
-  padding: 30rpx 0;
+.hide {
+  display: none
+}
+.insertSection {
+  width: 80rpx;
+  height: 80rpx;
+  position: fixed;
+  right: 30rpx;
+  bottom: 50rpx;
+}
+.areaList view {
+  height: 500rpx;
 }

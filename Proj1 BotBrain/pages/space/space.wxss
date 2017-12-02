@@ -1,0 +1,107 @@
+page {
+  background: #EDECE8;
+}
+.userInfo {
+    overflow: hidden;
+    padding: 30rpx 30rpx;
+
+    color: #FFF;
+    background: #3F51B5;
+
+    _height: 1%;
+}
+.userInfo .info-item {
+    float: left;
+}
+.userInfo .info-item  image {
+    display: block;
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+}
+
+.info-tags {
+    font-size: 28rpx;
+
+    padding-left: 155rpx;
+}
+.info-tags image {
+  width: 40rpx;
+  height: 40rpx;
+  float: right;
+  margin-top: 10rpx;
+}
+
+
+.jobImage{
+  position: absolute;
+  top: 70rpx;
+  right:30rpx;
+}
+.busImage{
+  position: absolute;
+  top: 130rpx;
+  right:30rpx;
+}
+
+/*.info-tags .job-tags,.info-tags .bus-tags {
+  overflow: hidden;
+  _height: 1%;
+}*/
+.info-tags text {
+    margin-top: 12.5rpx;
+    margin-left: 15rpx;
+    padding: 10rpx 4rpx;
+    color: #333;
+    border-radius: 5rpx;
+    background: #FFF;
+    font-size: 25rpx;
+}
+.info-tags .nickName {
+  padding-left:13rpx;
+}
+
+.job-tags{
+  margin-bottom:5rpx;
+  margin-top:5rpx;
+
+}
+.job-tags text:first-child, .bus-tags text:first-child {
+    color: #FFF;
+    background: none;
+}
+
+.nickName text {
+    font-size: 32.5rpx;
+    font-weight: 600;
+    display: block;
+    width: 60%;
+    margin-top: 0;
+    margin-left: 0;
+
+    color: #FFF;
+    background: none;
+}
+
+.follow-button {
+  float:right;
+  width: 100rpx;
+  height: 50rpx;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 50rpx;
+  background: #fff;
+  color: #333;
+  font-size: 28rpx;
+}
+
+.element{
+  margin-top:20rpx;
+}
+.showElement{
+  font-size:30rpx;
+}
+.showContent{
+  font-size:30rpx;
+  margin-left: 93rpx;
+}

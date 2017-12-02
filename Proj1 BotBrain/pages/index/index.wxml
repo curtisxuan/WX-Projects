@@ -1,0 +1,38 @@
+<view class="opa {{opa}}"></view>
+  <view class="header">
+   <scroll-view scroll-x class="nav">
+      <view wx:for="{{nav}}" wx:key="index" wx:for-item="nav" class="{{cid==nav.id?'check':''}} navText" bindtap="loadColumn" data-id="{{nav.id}}">
+      {{nav.name}}
+    </view>
+        </scroll-view> 
+        <view class="navImageView">
+          <image class="over" src='/pages/img/over.png'></image>
+          <image class="navImage" src='/pages/img/navAdd.png'></image>
+        </view>
+  </view>
+
+<view>
+<view class="list">
+<block  wx:for="{{list}}" wx:key="index" wx:for-item="list">
+<view class="item2" bindtap="linkDetail" data-iid="{{list.data.iid}}" wx:if="{{list.data.cover_url==null && list.data.images[0]==null}}">
+          <!-- 第一种情况 判断 没有 images和cover_url的情况 -->
+           <view>{{list.data.title}}</view>
+          <!-- 第二种情况 存在cover_url -->
+</view>
+          <view class="item" bindtap="linkDetail" data-iid="{{list.data.iid}}" wx:if="{{list.data.cover_url!=null}}">
+            <image mode="aspectFill" src="{{list.data.cover_url}}"></image>
+              <text>{{list.data.title}}</text>
+          </view>
+          <!-- 第三种情况  存在images[0] -->
+          <view class="item" bindtap="linkDetail" data-iid="{{list.data.iid}}" wx:if="{{list.data.images[0]!=null}}">
+            <image mode="aspectFill" src="{{list.data.images[0]}}"></image>
+  <text>{{list.data.title}}</text>
+  </view>
+  <view class="notice" wx:if="{{notice && index==5}}">您刚刚看到这里
+  </view>
+</block>
+</view>
+
+<image class="refresh" src="/pages/img/refresh.png" bindtap="loadBeginning" data-page="{{page}}" data-cat="{{cat}}"></image>
+</view>
+<view hidden="{{loading}}">...正在加载...</view>

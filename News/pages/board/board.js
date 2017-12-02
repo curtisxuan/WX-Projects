@@ -1,70 +1,97 @@
-// pages/list.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    buttonStatus: 'show',
+    userInfo: '',
+    areaStatus: 'hide'
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    // wx.showToast({
-    //   title: '页面加载成功',  //toast内容
-    //   icon: 'success', //toast图标
-    //   duration: 3000 // 持续时间 3s后消失
-    // })
+  getUserInfo: function (e) {
+    // console.log(e)
+    var that = this
+    that.setData({
+      userInfo: e.detail.userInfo
+    })
+    wx.login({
+      success: function (e) {
+        wx.request({
+          url: 'https://open.emstail.com/v1/getOpenid',
+          data: {
+            code: e.code
+          },
+          success: function (e) {
+            var openid = e.data
+            wx.setStorage({
+              key: 'openid',
+              data: openid
+            })
+            wx.request({
+              url: 'https://open.emstail.com/v1/userInsertAction',
+              data: {
+                'openid': openid,
+                'userInfo': that.data.userInfo
+              },
+              success: function (e) {
+                that.setData({
+                  buttonStatus: 'hide',
+                  areaStatus: 'show'
+                })
+                //用户信息存储本地缓存
+                wx.setStorage({
+                  key: 'userInfo',
+                  data: that.data.userInfo
+                })
+              }
+            })
+            console.log(that.data.userInfo);
+          }
+        })
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  insertDistAction: function (e) {
+    wx.showActionSheet({
+      itemList: ['新建行业分析报告', '新建个人培养计划'],
+      success: function (e) {
+        var type = e.tapIndex
+        //根据 tapIndex 跳转不同的发布页
+        wx.navigateTo({
+          url: '/pages/publish/publish?type=' + type
+        })
+      },
+      fail: function () {
+        console.log(e)
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+  onLoad: function (e) {
+    var that = this
+    //判断本地是否有用户信息缓存
+    wx.getStorage({
+      key: 'userInfo',
+      success: function (e) {
+        that.setData({
+          userInfo: e.data,
+          areaStatus: 'show'
+        })
+        console.log(that.data.userInfo);
+      },
+      fail: function (e) {
+        that.setData({
+          buttonStatus: 'show'
+        })
+      }
+    })
 
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    // typeQueryAction
+    // 获取已经发表的社区内容 作业或者研究报告
+    wx.request({
+      url: 'https://open.emstail.com/v1/typeQueryAction',
+      data: {},
+      success: function (e) {
+        console.log(e);
+      }
+    })
   }
 })

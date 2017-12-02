@@ -4,21 +4,20 @@
 		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
-		"minified": true,
-		"newFeature": true
+		"minified": true
 	},
-	"compileType": "miniprogram",
+	"compileType": "weapp",
 	"libVersion": "1.6.0",
 	"appid": "wxda91f4c708b3414f",
-	"projectname": "News",
+	"projectname": "Proj1%20BotBrain",
 	"condition": {
 		"weapp": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
-					"name": "Community",
-					"pathName": "pages/board/board",
+					"name": "comm",
+					"pathName": "pages/comm/comm",
 					"query": ""
 				}
 			]
@@ -28,10 +27,6 @@
 			"list": []
 		},
 		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
 			"current": -1,
 			"list": []
 		}

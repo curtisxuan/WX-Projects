@@ -1,0 +1,36 @@
+page {
+  background: #F0F0F0;
+}
+
+.keep-item {
+  background: #fff;
+  width: 700rpx;
+  margin: 30rpx auto;
+}
+.item-avatar {
+  float: left;
+  margin-right: 25rpx;
+}
+.item-avatar image {
+  width: 135rpx;
+  height: 135rpx;
+  float: left;
+}
+.item-info {
+  padding-left: 25rpx;
+  height: 135rpx;
+}
+.item-info .info-name, .item-info .info-published {
+  display: block;
+}
+.item-info .info-name {
+  font-size: 33rpx;
+  padding-top: 10rpx;
+  color: #555;
+  font-weight: 600;
+}
+.item-info .info-published {
+  font-size: 28rpx;
+  padding-top: 25rpx;
+  color: #666
+}

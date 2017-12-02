@@ -1,0 +1,38 @@
+page {
+    background: #F0F0F0;
+}
+.area {
+  padding:25rpx 50rpx;
+}
+.input-placeholder,.textarea-placeholder {
+  color: #b5b5b5;
+}
+.section_form {
+    margin-bottom: 30rpx;
+}
+.section_form view {
+    font-size: 36rpx;
+    color: #666;
+    margin-bottom: 15rpx;
+}
+.section_form input {
+    padding: 20rpx 30rpx;
+    font-size: 32.5rpx;
+    background: #fff;
+    color: #555;
+    border-radius: 10rpx;
+}
+.section_form textarea {
+  font-size:32.5rpx;
+  width:100%;
+  background:#fff;
+}
+#sub-button {
+    width: 255rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #FFF;
+    background: #3F51B5;
+    margin: 0 auto;
+    font-size: 35rpx;
+}

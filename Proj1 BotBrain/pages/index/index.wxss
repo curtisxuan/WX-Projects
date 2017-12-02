@@ -1,0 +1,146 @@
+ page {
+    background: #d0c7d4;
+}
+
+.item {
+  overflow: hidden;
+  _height: 1%;
+  margin-top: 25rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  padding: 10rpx;
+  border-bottom: 1px solid #bbbbbb;
+  background: #fff;
+  height: 110rpx;
+}
+.item text {
+  font-size: 32rpx;
+  float: right;
+  width: 480rpx;
+  line-height: 55rpx;
+}
+.item image {
+  width: 170rpx;
+  height: 110rpx;
+  float: left;
+}
+
+.item2 {
+  margin-top: 25rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  padding: 10rpx;
+  border-bottom: 1px solid #bbbbbb;
+  background: #fff;
+  height: 110rpx;
+}
+.item2 view {
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  height:100%;
+}
+
+/* day2 style */
+#button {
+  background: #3F51B5;
+  color: #fff;
+  width: 200rpx;
+  height: 70rpx;
+  font-size: 30rpx;
+  margin: 20rpx auto 20rpx auto;
+  text-align: center;
+  line-height: 70rpx;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+.header {
+  white-space: nowrap;
+  position: fixed;     /* 导航条浮动 */
+  background: #fff;    /* 增加背景色 */
+  top: 0;              /* 导航条距离顶部距离 */
+  font-size: 30rpx;    /* 字体大小 */
+  font-weight: 600;    /* 字体加粗 */
+  box-shadow:0 0 2px #999; /* 设置边框阴影 */
+  z-index: 2;
+  width: 100%;
+  height: 80rpx;
+}
+.list-wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.list {
+  margin-top: 105rpx;  /* list列表距离导航条高度 */
+}
+.nav {
+  display:inline-block;  
+  width:89%;
+}
+.nav view {
+  display:inline-block;
+  padding: 0 30rpx; 
+  line-height: 80rpx;
+  text-align: center;
+}
+
+.navImageView{
+  position: fixed;
+  width:11%;
+  top:0rpx;
+  right:0rpx;
+  height:80rpx;
+}
+.navImage{
+  padding-bottom:10rpx;
+  width: 44rpx;
+  height: 44rpx;
+}
+.over{
+  padding-top:7rpx;
+  width: 30rpx;
+  height: 64rpx;
+  z-index: 2;
+}
+
+
+/* 重置导航条位置  */
+.scrollList {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.opa {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+} 
+.check{
+  color:#487198;
+}
+
+.refresh{
+  position: fixed;
+  bottom: 15rpx;
+  right: 40rpx;
+  height: 70rpx;
+  width: 70rpx;
+}
+
+.notice{
+  margin-top:25rpx;
+  text-align: center;
+  color: #3F51B5;
+  font-size: 30rpx;
+  font-weight:900;
+}

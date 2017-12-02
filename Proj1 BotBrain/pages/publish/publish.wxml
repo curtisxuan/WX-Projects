@@ -1,0 +1,59 @@
+<!--pages/publish/publish.wxml-->
+<view class="area">
+    <view wx:if="{{type == 0}}">
+      这是发布行业分析报告
+    </view>
+    <view wx:else>
+      <form bindsubmit="save" bindreset="clean">
+          <view class="section_form">
+              <view class="name">姓名: </view>
+              <input name="name" placeholder="请输入你的姓名" />
+          </view>
+          <view class="section_form">
+              <view class="school">学校: </view>
+              <input name="school" placeholder="请输入你的学校" />
+          </view>
+          <view class="section_form">
+              <view class="telephone">电话: </view>
+              <input name="telephone" placeholder="请输入你的电话" />
+          </view>
+          <view class="section_form">
+              <view class="email">邮箱: </view>
+              <input name="email" placeholder="请输入你的邮箱" />
+          </view>
+          <view class="section_form">
+              <view class="section">部门: </view>
+              <input name="section" placeholder="输入你加入的部门" />
+          </view>
+          <view class="section_form">
+              <view class="dream">我的梦想是什么?</view>
+              <textarea maxlength='-1' name="dream" placeholder="35岁之前拥有一家属于自己的公司，实现财务自由。教育子女，让他们做自己喜欢做的事情。" />
+          </view>
+          <view class="section_form">
+              <view class="torealize">如何实现梦想?毕业后加入什么样的公司?</view>
+              <textarea maxlength='-1' name="torealize" placeholder="毕业后, 我先加入一个相关的初创公司, 积累知识技能,经验,人脉......" />
+          </view>
+          <view class="section_form">
+              <view class="quality">我需要具备哪些知识技能才能加入这样的初创公司?</view>
+              <textarea maxlength='-1' name="quality" placeholder="我准备从技术方面切入, 需要学习编程, 以技术人员的身份加入初创公司..." />
+          </view>
+          <view class="section_form">
+              <view class="toplan">计划参与课程项目</view>
+              <textarea maxlength='-1' name="toplan" placeholder="2017.3.1 我准备加入销售部, 参与微信公众号运营 2017.4.1 我准备加入产品部, 参与课程设计" />
+          </view>
+          <view class="section_form">
+              <view class="dedicate">个人课程贡献,没有贡献就不需要填写</view>
+              <textarea maxlength='-1' name="dedicate" placeholder="我加入营销部, 写了5次公众号推送 我加入产品部, 设计了..." />
+          </view>
+          <view class="section_form">
+              <view class="total">课程总结: </view>
+              <textarea maxlength='-1' name="total" placeholder="通过课程学习，是否到到了我的目标？有哪些目标没有完成？为什么没有完成？自己是否适合创业？自己适合从事什么类型的工作？？是否找到了适合自己职业发展的方向......" />
+          </view>
+          <view class="section_form">
+              <view class="item">我有自己的创业项目(选填)</view>
+              <textarea maxlength='-1' name="item" placeholder="有自己的创业项目的同学可以详细介绍下，我们会根据您的介绍提供相应的课程服务与资源......" />
+          </view>
+          <button id="sub-button" formType="submit">提交</button>
+      </form>
+    </view>
+</view>

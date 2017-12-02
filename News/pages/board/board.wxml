@@ -1,1 +1,6 @@
-it's board
+<!-- 绑定登录按钮 -->
+<button class="{{buttonStatus}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 点击授权进入社区 </button>
+
+<view class="{{areaStatus}} areaList">
+<image bindtap="insertDistAction" class="insertSection" src="/static/icon/add.png"></image>
+</view>

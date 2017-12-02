@@ -1,0 +1,12 @@
+<view class="content">
+  <block wx:for="{{content}}" wx:key="index" wx:for-item="c">
+    <!-- 渲染图片元素 type=img -->
+    <block wx:if="{{c.type=='img'}}">
+      <image src="{{c.url}}" mode="widthFix"></image>
+    </block>
+    <!-- 渲染文字元素 tyep=paragraphs -->
+    <block wx:if="{{c.type=='paragraphs'}}">
+      <view>{{c.content}}</view>
+    </block>
+  </block>
+</view>

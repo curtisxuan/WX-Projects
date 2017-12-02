@@ -1,0 +1,23 @@
+/* pages/item/item.wxss */
+.otitle, .gg200x300, .ep-source  {
+  display: none
+}
+.wxParse-inline {
+  text-indent: 2em;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+.wxParse-img {
+  display: block;
+  margin: 0 auto;
+  max-width:100%;
+}
+.items {
+  padding: 30rpx
+}
+.title {
+  font-size: 38rpx;
+  font-weight: 800;
+  color: #3F51B5;
+  text-align: center;
+}

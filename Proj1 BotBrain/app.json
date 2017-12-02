@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/item/item",        
+    "pages/self/self",
+    "pages/publish/publish",
+    "pages/comm/comm",
+    "pages/show/show",
+    "pages/keep/keep",
+    "pages/typeList/typeList",
+    "pages/edit/edit",
+    "pages/space/space",
+    "pages/follow/follow",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#405482",
+    "navigationBarTitleText": "陆向谦头条",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text":"首页",
+        "iconPath": "pages/img/index.png",
+        "selectedIconPath": "pages/img/index.act.png"
+      },
+      {
+        "pagePath": "pages/comm/comm",
+        "text": "课堂",
+        "iconPath": "pages/img/board.png",
+        "selectedIconPath": "pages/img/board.act.png"
+      },
+      {
+        "pagePath": "pages/self/self",
+        "text": "我的",
+        "iconPath": "pages/img/self.png",
+        "selectedIconPath": "pages/img/self.act.png"
+      }
+    ],
+    "position": "bottom",
+    "color": "#bbb",
+    "selectedColor": "#405482"
+  }
+}
