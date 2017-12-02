@@ -1,0 +1,17 @@
+<!--pages/comm/comm.wxml-->
+<view class = "whole">
+<block wx:for="{{list}}" wx:key="index" wx:for-item="list">
+  <navigator class="item" url="/pages/show/show?id={{list.id}}">
+    <view class="userInfo">
+      <image class="u-avatar" src="{{list.avatarUrl}}"></image>
+      <text class="u-nickname">{{list.nickName}}</text>
+      <text class="u-published">{{list.published}}</text>
+    </view>
+    <view class="itemInfo">
+      <view class="u-name"><text>姓名: </text>{{list.f_name}}</view>
+      <view class="u-school"><text>学校: </text>{{list.f_school}}</view>
+      <view class="u-section"><text>参与部门: </text>{{list.f_section}}</view>
+    </view>
+  </navigator>
+</block>
+</view>

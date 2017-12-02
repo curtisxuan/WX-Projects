@@ -1,0 +1,46 @@
+.userInfo {
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.userInfo .u-avatar {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  float: left;
+}
+.userInfo .u-nickname {
+  font-size: 32rpx;
+  float: left;
+  margin-left: 10rpx;
+}
+.userInfo .u-published {
+  font-size: 32rpx;
+  float: right;
+}
+.itemInfo {
+  margin-left: 80rpx;
+}
+.itemInfo .u-name,.itemInfo .u-school,.itemInfo .u-section, .itemInfo .u-telephone, .itemInfo .u-email  {
+  font-size: 32rpx;
+}
+.item {
+  padding: 20rpx 35rpx;
+}
+.detailInfo {
+  font-size: 32rpx;
+  margin-left: 80rpx;
+  margin-top: 20rpx;
+}
+.detailInfo text {
+    display: block;
+    color: #333;
+}
+.detailInfo view {
+  margin-bottom: 10rpx;
+  color: #666;
+}
+.likeButton image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 10rpx;
+}

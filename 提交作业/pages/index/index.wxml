@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view>
+<view class= "titleText">
+<text>清华大学</text>
+</view>
+
+<view class= "secondTitleText">
+<text>作业提交/查询入口</text>
+</view>
+
+<image src="../img/QXUni.jpg"></image>
+
+<button class="{{buttonStatus}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 点击授权进入社区 </button>
+
+<text class = "{{buttonStatus}} important">重要:</text> <text class = "{{buttonStatus}}">点击授权跳出请求框后，请按确定（按取消可能会出错）。</text>
+
+<view bindtap="submitPage" class="{{areaStatus}} subs">
+  <image src="../img/填写.png"></image>
+  <text>
+  点击这里提交作业
+  </text>
+</view>
+
+<view bindtap="commPage" class="{{areaStatus}} subs comm">
+  <image  src="../img/社区.png"></image>
+  <text>
+  点击这里查看社区
+  </text>
+</view>
+
+</view>
