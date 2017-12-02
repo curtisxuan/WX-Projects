@@ -1,0 +1,14 @@
+<view class="keep">
+  <block wx:for="{{keep}}" wx:key="index" wx:for-item="list">
+    <navigator class="keep-item" url="/pages/show/show?id={{list.id}}">
+      <view class="item-avatar">
+        <image src="{{list.avatarUrl}}"></image>
+      </view>
+      <view class="item-info">
+        <text class="info-name">{{list.f_name}} 的 <block wx:if="{{list.f_type==1}}">个人培养计划</block><block wx:else>行业分析报告</block>
+        </text>
+        <text class="info-published">发布于 {{list.published}}</text>
+      </view>
+    </navigator>
+  </block>
+</view>

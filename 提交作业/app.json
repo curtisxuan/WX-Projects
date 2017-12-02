@@ -3,12 +3,37 @@
     "pages/index/index",
     "pages/publish/publish",
     "pages/comm/comm",
-    "pages/show/show"
+    "pages/show/show",
+    "pages/self/self",
+    "pages/keep/keep",
+    "pages/typeList/typeList",
+    "pages/edit/edit",
+    "pages/space/space",
+    "pages/follow/follow"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "作业",
+        "iconPath": "pages/img/board.png",
+        "selectedIconPath": "pages/img/board.act.png"
+      },
+      {
+        "pagePath": "pages/self/self",
+        "text": "我的",
+        "iconPath": "pages/img/self.png",
+        "selectedIconPath": "pages/img/self.act.png"
+      }
+    ],
+    "position": "bottom",
+    "color": "#333",
+    "selectedColor": "#3F51B5"
   }
 }

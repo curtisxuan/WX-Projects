@@ -24,7 +24,7 @@
 <view bindtap="commPage" class="{{areaStatus}} subs comm">
   <image  src="../img/社区.png"></image>
   <text>
-  点击这里查看社区
+  点击这里查看作业
   </text>
 </view>
 

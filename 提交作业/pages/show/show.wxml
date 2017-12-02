@@ -1,15 +1,17 @@
+<view class = "whole {{show}}">
 <view class="item">
+  <view class="u-published">{{detail.published}}</view>
   <view class="userInfo">
     <image class="u-avatar" src="{{detail.avatarUrl}}"></image>
-    <text class="u-nickname">{{detail.nickName}}</text>
-    <text class="u-published">{{detail.published}}</text>
+    <view class="u-nickname" bindtap="linkSpace" data-openid="{{detail.openid}}">{{detail.nickName}}</view>
+    <view class="u-school"><image src="../img/school.png"></image>学校: {{detail.f_school}}</view>
   </view>
+
   <view class="itemInfo">
-    <view class="u-name"><text>姓名: </text>{{detail.f_name}}</view>
-    <view class="u-school"><text>学校: </text>{{detail.f_school}}</view>
-    <view class="u-telephone"><text>电话: </text>{{detail.f_telephone}}</view>
-    <view class="u-email"><text>邮箱: </text>{{detail.f_email}}</view>
-    <view class="u-section"><text>参与部门: </text>{{detail.f_section}}</view>
+    <view class="u-name"><image src="../img/name.png"></image>{{detail.f_name}}</view>
+    <view class="u-email"><image src="../img/email.png"></image>{{detail.f_email}}</view>
+    <view class="u-telephone"><image src="../img/telephone.png"></image>{{detail.f_telephone}}</view>
+    <view class="u-section"><image src="../img/section.png"></image>{{detail.f_section}}</view>
   </view>
   <view class="detailInfo">
     <view class="u-dream"><text>我的梦想是什么? </text>{{detail.f_dream}}</view>
@@ -23,4 +25,27 @@
   <view class="likeButton">
     <image bindtap="likeAction" src="/pages/img/like_{{likeStatus}}.png"></image><text>{{likeNum}}</text>
   </view>
+  <view class="keepButton">
+    <image bindtap="keepAction" src="/pages/img/keep_{{keepStatus}}.png"></image>
   </view>
+  </view>
+
+<block wx:for="{{commList}}" wx:key="index" wx:for-item="list">
+<view class = "commList" style="display: flex;flex-direction: column;">
+  <view>
+    <image src = "{{list.avatarUrl}}"> </image>
+    <view class = "commName"><text>{{list.nickName}}</text></view>
+  </view>
+  <view class = "commComm"><text>{{list.comment}}</text> </view>
+  <view class = "commPub"><text>{{list.published}}</text></view>
+</view>
+</block>
+
+</view>
+
+<view class="comment">
+    <input placeholder="说点什么吧" value="{{defaultText}}" bindblur="textPut" ></input>
+    <!-- <input placeholder="说点什么吧" value="{{defaultText}}" bindinput="textInput" ></input> -->
+    <text bindtap="putComment" >提交</text>
+</view>
+

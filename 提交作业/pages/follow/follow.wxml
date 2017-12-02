@@ -1,0 +1,8 @@
+<view class="followList">
+  <block wx:for="{{list}}" wx:key="index" wx:for-item="list">
+    <view>{{list.nickName}}
+      <text wx:if="{{list.followStatus == 0}}" bindtap="followChange" data-openid="{{list.openid}}">已关注</text>
+      <text wx:if="{{list.followStatus == 1}}" bindtap="followChange" data-openid="{{list.openid}}">关注</text>
+    </view>
+  </block>
+</view>

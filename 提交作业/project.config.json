@@ -30,7 +30,25 @@
 					"id": 2,
 					"name": "show",
 					"pathName": "pages/show/show",
-					"query": "id=48"
+					"query": "id=70"
+				},
+				{
+					"id": 3,
+					"name": "self",
+					"pathName": "pages/self/self",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "space",
+					"pathName": "pages/space/space",
+					"query": "openid=oAEwS0UKsr0nqJuK9_2aNoNALIxs"
+				},
+				{
+					"id": 5,
+					"name": "follow",
+					"pathName": "pages/follow/follow",
+					"query": ""
 				}
 			]
 		},

@@ -1,0 +1,66 @@
+<view class="opa {{domStatus}}">
+</view>
+<view class="userInfo">
+  <view class="info-item">
+    <image src="{{user.avatarUrl}}"></image>
+  </view>
+  <view class="info-tags">
+    <view class="nickName">
+      <text>{{user.nickName}}</text>
+    </view>
+    <view class="job-tags">
+      <text>职业标签</text>
+      <block wx:for="{{user.job}}" wx:key="index" wx:for-item="job">
+        <text>{{job}}</text>
+      </block>
+      <view bindtap="tagsAction" data-type="job" data-typeName="职业">
+      <image class=".jobImage" src="/pages/img/open-light.png"></image>
+      </view>
+    </view>
+    <view class="bus-tags">
+      <text>行业标签</text>
+      <block wx:for="{{user.bus}}" wx:key="index" wx:for-item="bus">
+        <text>{{bus}}</text>
+      </block>
+      <view bindtap="tagsAction" data-type="bus" data-typeName="行业">
+      <image class=".busImage" src="/pages/img/open-light.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="buttonList">
+  <view>
+    <image src="/pages/img/mode_1.png"></image>
+    <text>夜间</text>
+  </view>
+  <view>
+    <navigator url="/pages/keep/keep">
+      <image src="/pages/img/keep.png"></image>
+      <text>收藏</text>
+    </navigator>
+  </view>
+  <view>
+      <navigator url="/pages/follow/follow">  
+      <image src="/pages/img/follow.png"></image>
+      <text>关注</text>
+      </navigator>  
+  </view>
+</view>
+
+<view class="typeList">
+  <navigator url="/pages/typeList/typeList?type=1">
+    <text>个人培养计划</text>
+    <image src="/pages/img/open-dark.png"></image>
+  </navigator>
+   <!-- <navigator url="/pages/typeEdit/typeEdit?type=2"> 
+    <text>行业分析报告</text>
+    <image src="/pages/img/open-dark.png"></image>
+   </navigator>  -->
+</view>
+
+<view class="inputArea {{domStatus}}">
+  <view>请输入<text>{{typeName}}</text>标签</view>
+  <input bindinput="getTags" value="{{inputText}}" placeholder="用空格分割标签" />
+  <view bindtap="saveTags">保存</view>
+  <view bindtap="changeDom" >取消</view>
+</view>

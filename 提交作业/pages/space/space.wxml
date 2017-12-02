@@ -1,0 +1,33 @@
+<view class="userInfo">
+  <view class="info-item">
+    <image src="{{user.avatarUrl}}"></image>
+  </view>
+  <view class="info-tags">
+  <view class="follow-button" bindtap="followAction" data-openid="{{user.openid}}">{{followText}}</view>
+    <view class="nickName">
+      <text>{{user.nickName}}</text>
+    </view>
+    <view class="job-tags">
+      <text>职业标签</text>
+      <block wx:for="{{user.job}}" wx:key="index" wx:for-item="job">
+        <text>{{job}}</text>
+      </block>
+    </view>
+    <view class="bus-tags">
+      <text>行业标签</text>
+      <block wx:for="{{user.bus}}" wx:key="index" wx:for-item="bus">
+        <text>{{bus}}</text>
+      </block>
+    </view>
+  </view>
+</view>
+
+<view>
+  <view>个人培养计划</view>
+  <block wx:for="{{type}}" wx:key="index" wx:for-item="type">
+  <navigator class="element" url="/pages/show/show?id={{type.id}}">
+        <view class="showElement">计划{{index+1}}: {{type.published}}</view>
+        <view class ="showContent">目标：{{type.f_dream}}</view>
+  </navigator>
+      </block>
+</view>

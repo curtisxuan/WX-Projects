@@ -36,3 +36,22 @@
   font-size: 25rpx;
   margin-left: 90rpx;
 }
+
+.show{
+  display: inherit;
+}
+
+.hide{
+  display:none;
+}
+
+#button {
+  background: #3F51B5;
+  color: #fff;
+  width: 200rpx;
+  height: 70rpx;
+  font-size: 30rpx;
+  margin: 35rpx auto 35rpx auto;
+  text-align: center;
+  line-height: 70rpx;
+}

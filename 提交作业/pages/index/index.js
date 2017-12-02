@@ -17,7 +17,7 @@ Page({
       success: function (e) {
         console.log(e)
         wx.request({
-          url: 'https://open.emstail.com/v3/getOpenid',
+          url: 'https://open.emstail.com/v5/getOpenid',
           data: {
             appid: 'wxda91f4c708b3414f',
             secret: 'b3d6f712041016058a955d26902b2bd4',
@@ -33,7 +33,7 @@ Page({
 
             console.log(openid)
             wx.request({
-              url: 'https://open.emstail.com/v3/userInsertAction',
+              url: 'https://open.emstail.com/v5/userInsertAction',
               data: {
                 'openid': openid,
                 'userInfo': that.data.userInfo

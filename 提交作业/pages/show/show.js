@@ -4,14 +4,149 @@ Page({
     id: '',
     detail: '',
     likeNum: 'loading',
-    likeStatus: 0
+    likeStatus: 0,
+    comText: '',
+    defaultText: '',
+    inputText: '',
+    comList: {},
+    keepStatus: 0,
+    show: 'hide'
+  },
+
+  linkSpace: function (e){
+    var openid = e.currentTarget.dataset.openid;
+    wx.navigateTo({
+      url: '/pages/space/space?openid=' + openid
+    })
+  },
+
+  keepAction: function (e) {
+    var that = this
+    //用来做点赞交互
+    wx.request({
+      method: 'POST',
+      url: 'https://open.emstail.com/v5/keepInsertAction',
+      data: {
+        id: that.data.id,
+        openid: wx.getStorageSync('openid')
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (e) {
+        if (e.data.err == 0) {
+          wx.showToast({
+            title: '收藏成功',
+            icon: 'success',
+            duration: 1000,
+            mask: true
+          })
+          that.setData({
+            keepStatus: 1
+          })
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: '是否取消收藏',
+            success: function (e) {
+              if (e.confirm) {
+                console.log('用户点击确定')
+                wx.request({
+                  method: 'POST',
+                  url: 'https://open.emstail.com/v5/keepDelAction',
+                  data: {
+                    id: that.data.id,
+                    openid: wx.getStorageSync('openid')
+                  },
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                  },
+                  success: function (e) {
+                    if (e.data.err == 0) {
+                      wx.showToast({
+                        title: '取消收藏',
+                        icon: 'success',
+                        duration: 1000,
+                        mask: true
+                      })
+                      that.setData({
+                        keepStatus: 0
+                      })
+                    }
+                  },
+                  fail: function (e) {
+                    console.log(e);
+                  }
+                })
+              }
+            }
+          })
+        }
+      },
+      fail: function (e) {
+        console.log(e);
+      }
+    })
+  },
+
+  textPut: function (e) {
+    var that = this
+    that.setData({
+      comText: e.detail.value
+    })
+  },
+  putComment: function (e) {
+    var that = this
+    if (that.data.comText == '') {
+      wx.showToast({
+        title: '评论不能为空',
+        icon: 'loading',
+        duration: 1000
+      })
+      return
+    }
+    wx.showModal({
+      title: '提示',
+      content: '是否提交评论',
+      success: function (e) {
+        if (e.confirm) {
+          wx.request({
+            method: 'POST',
+            url: 'https://open.emstail.com/v5/commentPutAction',
+            data: {
+              id: that.data.id, //获取ID
+              openid: wx.getStorageSync('openid'),
+              comment: that.data.comText
+            },
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            }
+            ,
+            success: function (e) {
+              //请求成功 如何处理 该做什么
+              // wx.navigateTo({
+              //   url: "/pages/show/show?id="+that.data.id
+              // })
+              //如何清空评论框中的内容啊
+              that.setData({
+                defaultText: ''
+              })
+            },
+            fail: function (e) {
+              console.log(e);
+            }
+          })
+        } else {
+        }
+      }
+    })
   },
 
   likeAction: function(e){
     var that = this
     wx.request({
       method: 'POST',
-      url: 'https://open.emstail.com/v3/likeInsertAction',
+      url: 'https://open.emstail.com/v5/likeInsertAction',
       data: {
         id: that.data.id,
         openid: wx.getStorageSync('openid')
@@ -40,7 +175,7 @@ Page({
             content: '是否取消点赞',
             success: function (e) {
               if (e.confirm) {
-                console.log('用户点击确定')
+                // console.log('用户点击确定')
                 wx.request({
                   method: 'POST',
                   url: 'https://open.emstail.com/v3/likeDelAction',
@@ -65,22 +200,19 @@ Page({
                       })
                     }
                   },
-                  fail: function (e) {
-                    console.log(e);
-                  }
                 })
               }
             }
           })
         }
       },
-      fail: function (e) {
-        console.log(e);
-      }
     })
   },
   onLoad: function (e) {
     var that = this
+    wx.showLoading({
+      title: '加载中',
+    })
     that.setData({
       id: e.id
     })
@@ -88,7 +220,7 @@ Page({
     //查看详情页内容
     wx.request({
       method: 'POST',
-      url: 'https://open.emstail.com/v3/showQueryAction',
+      url: 'https://open.emstail.com/v5/showQueryAction',
       data: {
         id: that.data.id
       },
@@ -96,13 +228,13 @@ Page({
         'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (e) {
-        console.log(e);
+        // console.log(e)
         that.setData({
           detail: e.data[0]
         })
       },
       fail: function (e) {
-        console.log(e);
+        // console.log(e)
       }
     })
 
@@ -151,6 +283,31 @@ Page({
       }
     })
 
+    wx.request({
+      method: 'POST',
+      url: 'https://open.emstail.com/v3/commentGetAction',
+      data: {
+        id: that.data.id,
+        size: 10,
+        page: 1
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (e) {
+        console.log(e);
+        that.setData({
+          commList: e.data.list,
+          show: 'show'
+        })
+      },
+      fail: function (e) {
+        console.log(e);
+      }
+    })
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 2000)
   },
 
 })
